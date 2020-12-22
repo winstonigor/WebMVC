@@ -10,5 +10,6 @@ namespace WebMVC.Models.Enums
         Pendente = 0,
         Faturado = 1,
         Cancelado = 2
+            
     }
 }
