@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebMVC.Data;
 
 namespace WebMVC.Migrations
 {
     [DbContext(typeof(WebMVCContext))]
-    partial class WebMVCContextModelSnapshot : ModelSnapshot
+    [Migration("20201222014035_OutrasEntities")]
+    partial class OutrasEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
