@@ -39,6 +39,7 @@ namespace WebMVC
             services.AddDbContext<WebMVCContext>(options =>
             options.UseMySql(Configuration.GetConnectionString("WebMVCContext"), builder => builder.MigrationsAssembly("WebMVC")));
 
+            services.AddScoped<SeedingService>();
 
         }
 
