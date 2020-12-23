@@ -10,11 +10,11 @@ using WebMVC.Models;
 
 namespace WebMVC.Controllers
 {
-    public class DepartamentoesController : Controller
+    public class DepartamentosController : Controller
     {
         private readonly WebMVCContext _context;
 
-        public DepartamentoesController(WebMVCContext context)
+        public DepartamentosController(WebMVCContext context)
         {
             _context = context;
         }
@@ -56,6 +56,7 @@ namespace WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nome")] Departamento departamento)
         {
+                       
             if (ModelState.IsValid)
             {
                 _context.Add(departamento);

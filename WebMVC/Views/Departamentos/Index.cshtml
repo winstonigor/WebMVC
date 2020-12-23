@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebMVC.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Departamentos";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-flatry.css" />  <!--mudando a chamada do tema do bootstrap-->
+<link rel="stylesheet" href="~/css/site.css" />
+<h2>Departamentos</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary btn-xs">Novo Departamento</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+                
+            </th>
+            <th>Opção</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                
+                </td>
+                <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
