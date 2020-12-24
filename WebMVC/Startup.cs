@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebMVC.Data;
+using WebMVC.Services;
 
 namespace WebMVC
 {
@@ -40,6 +41,7 @@ namespace WebMVC
             options.UseMySql(Configuration.GetConnectionString("WebMVCContext"), builder => builder.MigrationsAssembly("WebMVC")));
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<VendedorService>();
 
         }
 
