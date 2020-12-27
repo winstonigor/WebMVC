@@ -42,6 +42,7 @@ namespace WebMVC
 
             services.AddScoped<SeedingService>();
             services.AddScoped<VendedorService>();
+            services.AddScoped<DepartamentoService>();
 
         }
 

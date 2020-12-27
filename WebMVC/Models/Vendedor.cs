@@ -13,6 +13,7 @@ namespace WebMVC.Models
         public double BaseSalarial { get; set; }
         public DateTime DataNascimento { get; set; }
         public Departamento Departamento { get; set; }
+        public int DepartamentoId { get; set; }
         public ICollection<RegistroVenda> RegistroVendas { get; set; } = new List<RegistroVenda>(); // Vendedor tem varios registro de vendas
 
         public Vendedor()

@@ -1,5 +1,5 @@
 ﻿
-@model WebMVC.Models.Vendedor
+@model WebMVC.Models.ViewModels.VendedorFormViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -14,51 +14,41 @@
     <fieldset>
         <legend>Novo Vendedor</legend>
         <div class="form-group">
-            <label asp-for="Nome" class="col-lg-2 control-label">Nome</label>
+            <label asp-for="Vendedor.Nome" class="col-lg-2 control-label">Nome</label>
             <div class="col-lg-10">
-                <input asp-for="Nome" type="text" class="form-control" id="Nome" placeholder="Nome">
+                <input asp-for="Vendedor.Nome" type="text" class="form-control" id="Nome" placeholder="Nome">
             </div>
 
         </div>
 
         <div class="form-group">
-            <label asp-for="Email" class="col-lg-2 control-label">Email</label>
+            <label asp-for="Vendedor.Email" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-                <input asp-for="Email"  type="email" class="form-control" id="inputEmail" placeholder="Email">
+                <input asp-for="Vendedor.Email" type="email" class="form-control" id="inputEmail" placeholder="Email">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="inpuBaseSalarial" class="col-lg-2 control-label">Base Salarial</label>
+            <label asp-for="Vendedor.BaseSalarial" class="col-lg-2 control-label">Base Salarial</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inpuBaseSalarial" placeholder="R$">
+                <input asp-for="Vendedor.BaseSalarial" type="number" class="form-control" id="inpuBaseSalarial" placeholder="R$">
             </div>
         </div>
 
 
         <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Data de Nascimento</label>
+            <label asp-for="Vendedor.DataNascimento" class="col-lg-2 control-label">Data de Nascimento</label>
             <div class="col-lg-10">
-                <input type="date" class="form-control" id="inpuBaseSalarial" placeholder="">
+                <input asp-for="Vendedor.DataNascimento" type="date" class="form-control" id="inpuBaseSalarial" placeholder="">
             </div>
         </div>
 
 
 
         <div class="form-group">
-            <label for="select" class="col-lg-2 control-label">Departamento</label>
+            <label asp-for="Vendedor.DepartamentoId" class="col-lg-2 control-label">Departamento</label>
             <div class="col-lg-10">
-                <select class="form-control" id="select">
-                    <option>Computador</option>
-                    <option>Computador</option>
-                    <option>Computador</option>
-                    <option>Computador</option>
-                    <option>Computador</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <select asp-for="Vendedor.DepartamentoId" asp-items="@(new SelectList(Model.Departamentos, "Id","Nome"))" class="form-control" id="select"></select>
             </div>
         </div>
         <div class="form-group">
