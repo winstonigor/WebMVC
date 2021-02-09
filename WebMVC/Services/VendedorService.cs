@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +33,8 @@ namespace WebMVC.Services
 
         public Vendedor FindBayId(int id)
         {
-            return _context.Vendedor.FirstOrDefault(obj => obj.Id == id);
+            // Join para retornar com o Departamento do vendedor
+            return _context.Vendedor.Include(obj => obj.Departamento).FirstOrDefault(obj => obj.Id == id);
         }
 
         public void Remover (int id)
